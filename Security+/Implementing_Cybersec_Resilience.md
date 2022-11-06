@@ -162,5 +162,90 @@ Example: Cloud (AWS)
 
  ## Differential BU
 - BU's file with archive bit set
-- Any new file or
+- Any new file or file changed since last full back up is restored
+- Does NOT clear archive bit 
+- slow to back up - quick to restore
+- last full back up and most recent differntial back up is needed
 
+## Snapshots
+- Easier and faster backups and restores
+- Immediate point in time cirtual copy
+    - should be replicated to anotehr media to be considered back up
+- Time to back up does not increase
+- Improved Recover Time Objectives **RTO** and Recovery Point Objective **RPO**
+- Restored faster w/ less data loss
+
+
+# Non-persistence Concepts
+
+- Many admins roll back
+    - Revert to "Known State"
+    - prior to Win10 "Last Known Good COnfiguration"
+    - Live Boot Media
+        - Done in forensics, used when needed seperate OS for investigating
+        - Can introduce threats
+
+## Non - persistence VDIs (Virtual Desktop instances)
+- Can preserve personalized configs, data, settings so desktop is retrievable
+- Non-persistent desktop is thin stateless so user cannot retain data at end of session
+- CSPs are commonly making these services avaialble as bastian servers or jump hosts for management
+
+# High-Availablility Concepts
+
+## Availability v Durability 
+> These have diff roles
+### Availability
+> - System uptime
+> - client's ability to access
+> - if storage system, opertaional and whether it can deliver data
+> - Usually measure as 99.0 or 99.999 per year of uptime
+
+### Durability
+> - long-term data protection
+> - data-at-rest does not suffer from bit tor, degradation, or other corruption
+> - CSPs offer from 11 to 16 "9s" of durability
+
+## Scalability v Elasticity
+
+- **Scalability** ability to increate workload on current hardware (Scale up)
+
+- **Elasticity** ability to increase worload on current hardware AND to increase hardware on demans (scale out)
+
+# Order of Restoration
+
+## Data Recovery and Restoration
+
+1. Repair the hard drive
+2. Image the drive to new drive or disk image file
+3. Logical recovery of files, partition, MBR, and file system
+    - Master Boot 
+4. Repair damaged files that were restored
+    - documents can be recovered with various SW
+
+## Disaster Recovery plan Order of Restoration
+
+1. Protect people and critical assets.
+2. Sustain ongoing operation viability
+3. Maintain financial stability
+    - can we get to point we're not losing money
+
+# Diversity Concepts
+
+- Objective is meant for Resiliency Diversity
+    - Meaning Diversity of:
+        - Technnologies
+            - Company not jsut using VoIP
+            - Landline service
+            - Cellphone service
+            - Diversity in service providers
+        - Vendors
+            - Helps to have multiple suppliers
+        - Controls
+            - using multiple sources for policies
+            - Diversity of technical controls
+                - use multiple vendors
+            - Have locks, CCTV access control, etc
+        - Cryptosystems
+            - Not using outdate systems
+            - Using ipsec or tls remote access
+            - Having multiple VPN versions like CISCO and CSP VPNs
