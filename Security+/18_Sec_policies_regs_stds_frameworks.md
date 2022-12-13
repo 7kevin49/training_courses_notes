@@ -189,5 +189,138 @@ Sanitaiton
 - Wiping
 - Encrpytion
 
-## Credential Policies
-- 
+# Credential Policies
+## User Accounts
+
+- must be unique per person and not shared
+- Often use DAC security model
+- Admins should have seperate non-privleged account for normal daily activities
+- Best when centrally managed
+- Least privledge
+- MFA is prefered to simple password creds
+- Employ lockout after 3-5 failed logins
+- SSO should be neterprise goal
+
+## Chared Accounts
+- Anonymous or guest accounts 
+- Temp employyee accounts
+- Shared admin accounts
+- Batch or script running accounts
+
+## Privleged Accounts
+- Accounts with elevated access to systems with special creds
+- Typically given non-restricted or least elevated access to system
+- Designed for SAs to deploy and manage IT systems
+- Considered "keys ot kingdom" and are prime target in kill chain
+
+### Examples of Privleged accounts
+- root and privleged exec users
+- Local admin accounts
+- forest/domain admin accounts
+- emergency accounts
+    - unrpivleged users with admin access for emergencies
+- Application accounts
+
+## Service Accounts
+
+- privledged local or domain accts for app ro svc to function with network OS
+- Some domain admin privleges contrigent on app needs such as email or DB services
+- local svc accts can operated w/ several different system component which renders coordination of password changes challenging
+- acct passwords are rarely changed and can be significant vulenrability
+
+# Organizational Management
+
+## Change Management
+
+1. Submitting
+    - proposal for change management
+2. Approving
+    - if automated it is not applicable here
+    - could be changing to new config or device
+        - may be denied
+3. Documenting
+    - inputting changes into change log
+    - must be updated regularly
+4. Testing
+    - not always done
+5. Implementing
+    - implemented after changed are green lighted
+6. Reporting
+
+## Change Control
+- in ITIL 4 change mgmt called change control
+- goal is maz amt of successful service and product modifications
+- Assuring proper risk assessment change authorization and scheduling
+
+## Types of Changes
+- Standard Changes - low risk pre-authorized and well-documented - often svc requests that dont need addtl authorization
+- Normal - follow specific process for scheduling - assement, and authroization
+- Emergency
+    - must be made immediately and may invovle advisory board
+
+## Asset Mgmt
+- Scope covers all HW, SW, network infastructure, endpoint devices, virtualization hypervisors, and cloud resources
+    - Valuation
+    - Classification
+    - Labelling and tagging
+    - Handling
+    - Disposition
+
+### Purpose of Asset Mgmt
+- Max value
+- Control costs and meet objectives
+- Manage risk and slign with access control framework
+- Support the decision-making process
+- Meet regulatory and contractual req's
+
+# Regulations, Standard, and Legislation
+
+- Regulatory v Non Regulatory
+    - Regulatory
+        - HIPAA, SOX, GDPR
+    - Non Regulatory
+        - NIST, ITIL4, ISO/IEC, COBIT5, CIS, ISACA
+- Country v Internation
+    - US
+        - FISMA, GLBA, COBIT5, HIPAA
+    - INTL
+        - GDPR, ITIL4, ISO/IEC, IDABC, OBASHI
+- Indusstry
+    - PCI-DSS for credit card companies
+    - Sarbanes Oxley (SOX) for financial services
+    - HIPAA for PHI
+    - GDPR for EU privacy
+
+# Key Frameworks
+
+- help determine orgs maturity level by performing gap analysis against best practices and implementing agreed risk controls
+    - CIS
+    - NIST (Common secure configs)
+    - Internation Organization for Standardization (ISO)
+        - 27001/27002/27701/31000
+    - SSAE SOC 2 Type II/III
+    - Cloud Security Alliance
+
+# Benchmarks and Secure Configuration Guides
+
+## Benchmarks
+- Tecnique to improve infosec mgmt y establishing standard
+- CIS Benchmarks are best practices to config various systems
+- established w/ special method from gloabl cybersec experts
+- CIS Benchmarks are sec config guides created by gov, business, and academia
+
+## Secure Confguration Guides
+- During implementation phase od sec lifecycle, one will develop and implemet sec policies, procedures, baselines, and config guidelines
+- info is like a standard but is more flexible and usually not mandatory
+
+## Specific COnfiguration Guides
+- Web server
+    - OWASP
+- OS
+    - WIndows Linux, Unix, 
+- App Servers
+- Network infastructure
+
+
+
+    
